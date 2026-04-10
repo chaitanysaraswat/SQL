@@ -63,5 +63,16 @@ delete from dept_using_cu_fk_ex_null where dept_id=1;
 select * from dept_using_cu_fk_ex_null;
 select * from emp_using_cu_fk_ex_null;
 
+#===========================Drop/truncate/Alter:-- DDL==================================
+drop table products;
+truncate table student;
+
+select * from products;
+select * from student;
+truncate dept_using_cu_fk_ex_null;
+-- 11:45:34	truncate dept_using_cu_fk_ex_null	Error Code: 1701. Cannot truncate a table referenced in a foreign key constraint (`day4`.`emp_using_cu_fk_ex_null`, CONSTRAINT `emp_using_cu_fk_ex_null_ibfk_1`)	0.015 sec
+truncate dept_using_cu_fk_ex_null;
+drop table dept_using_cu_fk_ex_null;
+-- 11:47:08	drop table dept_using_cu_fk_ex_null	Error Code: 3730. Cannot drop table 'dept_using_cu_fk_ex_null' referenced by a foreign key constraint 'emp_using_cu_fk_ex_null_ibfk_1' on table 'emp_using_cu_fk_ex_null'.	0.000 sec
 
 
